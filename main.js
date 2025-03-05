@@ -21,7 +21,11 @@ serve(async (req) => {
   // 处理响应头（解决CORS问题）
   const proxyHeaders = new Headers(response.headers);
   proxyHeaders.set("access-control-allow-origin", "*");
-  
+  proxyHeaders.set(
+    "Content-Security-Policy",
+    "default-src 'self'; connect-src 'self' https://api.jdjygold.com"
+  );
+
   return new Response(response.body, {
     status: response.status,
     headers: proxyHeaders

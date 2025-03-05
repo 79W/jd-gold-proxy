@@ -23,7 +23,7 @@ serve(async (req) => {
   proxyHeaders.set("access-control-allow-origin", "*");
   proxyHeaders.set(
     "Content-Security-Policy",
-    "default-src 'self'; connect-src 'self' https://api.jdjygold.com"
+    "default-src 'self'; connect-src 'self' https://jd.mmvv.cc"
   );
 
   return new Response(response.body, {
